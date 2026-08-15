@@ -1,0 +1,19 @@
+<Project>
+  <PropertyGroup>
+    <RedBoltActionsRoot>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..'))</RedBoltActionsRoot>
+    <RedBoltRoot Condition="'$(RedBoltRoot)' == ''">$([System.IO.Path]::GetFullPath('$(RedBoltActionsRoot)/../RedBolt'))</RedBoltRoot>
+    <RedBoltDearImGuiEnabled>true</RedBoltDearImGuiEnabled>
+    <RedBoltExternalModuleRoot>$(RedBoltActionsRoot)</RedBoltExternalModuleRoot>
+    <RedBoltExternalModuleName>RedBolt.Actions</RedBoltExternalModuleName>
+    <RedBoltExternalBuildProjectName>RedBolt.Actions.Build</RedBoltExternalBuildProjectName>
+    <RedBoltExternalModuleProjectNames>RedBolt.Actions</RedBoltExternalModuleProjectNames>
+    <RedBoltExternalHasNative>false</RedBoltExternalHasNative>
+    <RedBoltExternalUsesDearImGui>true</RedBoltExternalUsesDearImGui>
+    <RedBoltExternalDesktopResourceRoot>$(RedBoltRoot)</RedBoltExternalDesktopResourceRoot>
+  </PropertyGroup>
+  <Import Project="$(RedBoltRoot)/src/RedBolt/Build/Directory.Build.props" />
+  <PropertyGroup>
+    <RedBoltExternalModuleEnabled>$(RedBoltActionsEnabled)</RedBoltExternalModuleEnabled>
+    <RedBoltExternalModuleBuildProperties>RedBoltActionsEnabled=$(RedBoltActionsEnabled)</RedBoltExternalModuleBuildProperties>
+  </PropertyGroup>
+</Project>

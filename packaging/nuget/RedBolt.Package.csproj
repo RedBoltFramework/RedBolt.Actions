@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RedBoltExternalPackageProjectUrl>https://github.com/RedBoltFramework/RedBolt.Actions</RedBoltExternalPackageProjectUrl>
+    <RedBoltExternalPackageRepositoryUrl>https://github.com/RedBoltFramework/RedBolt.Actions.git</RedBoltExternalPackageRepositoryUrl>
+    <RedBoltExternalPackageTags>RedBolt game-engine csharp dotnet actions animation</RedBoltExternalPackageTags>
+  </PropertyGroup>
+  <Import Project="../../../RedBolt/src/RedBolt/Build/NuGetPackage.targets" />
+</Project>

@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/src/RedBolt/Build/">
+    <Project Path="src/RedBolt/Build/RedBolt.Actions.Build.csproj" />
+  </Folder>
+  <Folder Name="/src/RedBolt/">
+    <Project Path="src/RedBolt/Actions/RedBolt.Actions.csproj"><Build Project="false" /></Project>
+  </Folder>
+  <Folder Name="/src/RedBolt/Sample/">
+    <Project Path="src/RedBolt/Sample/Actions/RedBolt.Sample.Actions.csproj"><Build Project="false" /></Project>
+    <Project Path="src/RedBolt/Sample/Web/RedBolt.Sample.Web.csproj"><Build Project="false" /></Project>
+    <Project Path="src/RedBolt/Sample/Android/RedBolt.Sample.Android.csproj"><Build Project="false" /></Project>
+  </Folder>
+</Solution>
