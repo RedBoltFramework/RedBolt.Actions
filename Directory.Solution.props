@@ -5,11 +5,15 @@ For a copy, see <https://opensource.org/licenses/MIT> or the accompanying LICENS
 -->
 
 <Project>
+  <!--
+    Module solution entry point. Resolves this module's root and the core RedBolt repository,
+    declares itself as an external module, and chains into the core solution props.
+  -->
   <PropertyGroup>
     <RedBoltActionsRoot>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory).'))</RedBoltActionsRoot>
     <RedBoltRoot Condition="'$(RedBoltRoot)' == ''">$([System.IO.Path]::GetFullPath('$(RedBoltActionsRoot)/../RedBolt'))</RedBoltRoot>
     <RedBoltExternalModuleRoot>$(RedBoltActionsRoot)</RedBoltExternalModuleRoot>
     <RedBoltExternalModuleName>RedBolt.Actions</RedBoltExternalModuleName>
   </PropertyGroup>
-  <Import Project="$(RedBoltRoot)/src/RedBolt/Build/Directory.Solution.props" />
+  <Import Project="$(RedBoltRoot)/eng/RedBolt.ModuleBuild/Directory.Solution.props" />
 </Project>

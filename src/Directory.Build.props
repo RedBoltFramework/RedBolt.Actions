@@ -5,19 +5,16 @@ For a copy, see <https://opensource.org/licenses/MIT> or the accompanying LICENS
 -->
 
 <Project>
+  <!--
+    Module project evaluation. Declares the module identity and shares the core repo's desktop data.
+  -->
   <PropertyGroup>
     <RedBoltActionsRoot>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..'))</RedBoltActionsRoot>
     <RedBoltRoot Condition="'$(RedBoltRoot)' == ''">$([System.IO.Path]::GetFullPath('$(RedBoltActionsRoot)/../RedBolt'))</RedBoltRoot>
-    <RedBoltDearImGuiEnabled>true</RedBoltDearImGuiEnabled>
     <RedBoltExternalModuleRoot>$(RedBoltActionsRoot)</RedBoltExternalModuleRoot>
     <RedBoltExternalModuleName>RedBolt.Actions</RedBoltExternalModuleName>
-    <RedBoltExternalModuleProjectNames>RedBolt.Actions</RedBoltExternalModuleProjectNames>
     <RedBoltExternalHasNative>false</RedBoltExternalHasNative>
-    <RedBoltExternalUsesDearImGui>true</RedBoltExternalUsesDearImGui>
     <RedBoltExternalDesktopResourceRoot>$(RedBoltRoot)</RedBoltExternalDesktopResourceRoot>
   </PropertyGroup>
-  <Import Project="$(RedBoltRoot)/src/RedBolt/Build/Directory.Build.props" />
-  <PropertyGroup>
-    <RedBoltExternalModuleEnabled>$(RedBoltActionsEnabled)</RedBoltExternalModuleEnabled>
-  </PropertyGroup>
+  <Import Project="$(RedBoltRoot)/eng/RedBolt.ModuleBuild/Directory.Build.props" />
 </Project>

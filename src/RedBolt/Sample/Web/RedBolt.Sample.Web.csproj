@@ -10,5 +10,5 @@ For a copy, see <https://opensource.org/licenses/MIT> or the accompanying LICENS
     <ProjectReference Include="$(RedBoltRoot)/src/RedBolt/DearImGui/RedBolt.DearImGui.csproj" />
     <Compile Include="../Actions/**/*.cs" Link="Samples/%(RecursiveDir)%(Filename)%(Extension)" />
   </ItemGroup>
-  <Import Project="$(RedBoltRoot)/src/RedBolt/Build/WebSample.targets" />
+  <Import Project="$(RedBoltRoot)/eng/RedBolt.ModuleBuild/WebSample.targets" />
 </Project>
