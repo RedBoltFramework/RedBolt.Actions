@@ -1,0 +1,13 @@
+{
+  "name": "RedBolt.Actions",
+  "applicationId": "org.redbolt.actions.samples",
+  "web": true,
+  "android": true,
+  "projectReferences": [
+    "src/RedBolt/Actions/RedBolt.Actions.csproj",
+    "../RedBolt/src/RedBolt/DearImGui/RedBolt.DearImGui.csproj"
+  ],
+  "samples": [
+    { "id": "actions", "name": "Actions", "applicationType": "RedBolt.Sample.Actions.ActionsApplication", "source": "Actions" }
+  ]
+}
