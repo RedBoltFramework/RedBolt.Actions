@@ -85,6 +85,7 @@ sealed class ActionsApplication : Application
     private ActionManager? _actionManager;
     private Node? _ballNode;
     private Material? _ballMaterial;
+    private SampleInputMap? _sampleInput;
     private int _callbackCount;
     private int _eventCount;
 
@@ -105,6 +106,7 @@ sealed class ActionsApplication : Application
 
     protected override void Start()
     {
+        _sampleInput = new SampleInputMap();
         _actionManager = new ActionManager();
         Context.RegisterSubsystem(_actionManager);
         Context.RegisterSubsystem(new DearImGui((ImGuiConfigFlags)Engine.Parameters.DearImGuiFlags));
@@ -378,12 +380,14 @@ sealed class ActionsApplication : Application
 
     protected override void Update(float timeStep)
     {
-        if (Input.ExitRequested || Input.GetKeyPress(Key.Escape))
+        if (Input.ExitRequested || _sampleInput!.Pressed("Exit"))
             Exit();
     }
 
     protected override void Stop()
     {
+        _sampleInput?.Dispose();
+        _sampleInput = null;
         DisposeScene();
         base.Stop();
     }
